@@ -27,20 +27,41 @@ function boron_preprocess_search_block_form(&$vars) {
  * ref: http://drupal.org/node/887600
  */
 function boron_preprocess_html(&$vars) {
+  // Ensure that the $vars['rdf'] variable is an object.
+  if (!isset($vars['rdf']) || !is_object($vars['rdf'])) {
+    $vars['rdf'] = new StdClass();
+  }
+
+  if (module_exists('rdf')) {
+    $vars['doctype'] = '<!DOCTYPE html PUBLIC "-//W3C//DTD HTML+RDFa 1.1//EN">' . "\n";
+    $vars['rdf']->version = 'version="HTML+RDFa 1.1"';
+    $vars['rdf']->namespaces = $vars['rdf_namespaces'];
+    $vars['rdf']->profile = ' profile="' . $vars['grddl_profile'] . '"';
+  } else {
     $vars['doctype'] = '<!DOCTYPE html>' . "\n";
+    $vars['rdf']->version = '';
+    $vars['rdf']->namespaces = '';
+    $vars['rdf']->profile = '';
+  }
+  
+
+ // use the $html5shiv variable in their html.tpl.php
+  $element = array(  
+    'element' => array(
+    '#tag' => 'script',
+    '#value' => '',
+    '#attributes' => array(
+      'src' => '//html5shiv.googlecode.com/svn/trunk/html5.js',
+     ),
+   ),
+ );
+
+ $shimset = theme_get_setting('boron_shim');
+ $script = theme('html_tag', $element);
+ //If the theme setting for adding the html5shim is checked, set the variable.
+ if ($shimset == 1) { $vars['html5shim'] = "\n<!--[if lt IE 9]>\n" . $script . "<![endif]-->\n"; }
+
 }
-
-
-
-function boron_preprocess_page (&$variables) {
-	// page--vocabulary--N.tpl.php
-	if (arg(0) == 'taxonomy' && arg(1) == 'term' && is_numeric(arg(2))) {
-    	$tid = arg(2);
-    	$vid = db_query("SELECT vid FROM {taxonomy_term_data} WHERE tid = :tid", array(':tid' => $tid))->fetchField();
-    	$variables['theme_hook_suggestions'][] = 'page__vocabulary__' . $vid;
-  	}
-}
-
 
 /**
  * Return a themed breadcrumb trail.
@@ -85,20 +106,3 @@ function boron_breadcrumb($vars) {
   // Otherwise, return an empty string.
   return '';
 }
-
-function boron_preprocess_node(&$vars) {
-  // подключаем крутилку фотографии на главной
-  if ($vars['page'] && $vars['node']->nid == 6) {
-	drupal_add_js('http://code.jquery.com/jquery-latest.min.js');
-    drupal_add_js(path_to_theme() . '/js/rotate-img.js');
-  }
-  
-  // подключаем карту в контактах
-  if ($vars['page'] && $vars['node']->nid == 8) {
-	drupal_add_js('http://maps.googleapis.com/maps/api/js?sensor=false');
-    drupal_add_js(path_to_theme() . '/js/map.js');
-  }
-}
-
-
-?>

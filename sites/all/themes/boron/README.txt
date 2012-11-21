@@ -8,6 +8,12 @@ standards-compliant theme with valid markup and minimal CSS that can be used
 as a jumping off point for developing new sub-themes. This leaves your site
 positioned to take advantage of new HTML5 features as they come into vogue.
 
+THEME STRUCTURE
+-boron/ -- Contains all of theme files
+-boron/css -- all .css files
+-boron/templates -- all .tpl.php files
+
+
 PHILOSOPHY
 The goal of developing this theme was to convert the core Drupal
 templates to HTML5. Wherever possible, core markup, attributes and class names

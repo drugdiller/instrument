@@ -103,10 +103,10 @@ function wysiwyg_fckeditor_settings($editor, $config, $theme) {
     'CustomConfigurationsPath' => base_path() . drupal_get_path('module', 'wysiwyg') . '/editors/js/fckeditor.config.js',
     'Width' => '100%',
     'Height' => 420,
-    'LinkBrowser' => TRUE,
-    'LinkUpload' => TRUE,
-    'ImageBrowser' => TRUE,
-    'ImageUpload' => TRUE,
+    'LinkBrowser' => FALSE,
+    'LinkUpload' => FALSE,
+    'ImageBrowser' => FALSE,
+    'ImageUpload' => FALSE,
     'FlashBrowser' => FALSE,
     'FlashUpload' => FALSE,
     // By default, FCKeditor converts most characters into HTML entities. Since
@@ -131,8 +131,8 @@ function wysiwyg_fckeditor_settings($editor, $config, $theme) {
     if ($config['css_setting'] == 'theme') {
       $settings['EditorAreaCSS'] = implode(',', wysiwyg_get_css());
     }
-    else if ($config['css_setting'] == 'self' && isset($config['css_path'])) {
-      $settings['EditorAreaCSS'] = strtr($config['css_path'], array('%b' => base_path(), '%t' => path_to_theme()));
+    elseif ($config['css_setting'] == 'self' && isset($config['css_path'])) {
+      $settings['EditorAreaCSS'] = strtr($config['css_path'], array('%b' => base_path(), '%t' => drupal_get_path('theme', variable_get('theme_default', NULL))));
     }
   }
 

@@ -76,29 +76,46 @@
  * @see template_process()
  */
 ?>
-<?php if ($page): ?>    
-<?php //здесь выводим то что надо на отдельные ноды ?>
-	<article>
-	  	<div class="content">
-	  	  <?php
-	  	    // We hide the comments, tags and links now so that we can render them later.
-	  	    hide($content['comments']);
-	  	    hide($content['links']);
-	  	    hide($content['field_tags']);
-	  	    print render($content);
-	  	  ?>
-	  	</div> <!-- /.content -->
-      	
-	</article> <!-- /.node -->
+<article id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 
+  <?php if ($user_picture || !$page || $display_submitted): ?>
+    <header>
+      <?php print $user_picture; ?>
 
+      <?php print render($title_prefix); ?>
+      <?php if (!$page): ?>
+        <h2<?php print $title_attributes; ?>><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
+      <?php endif; ?>
+      <?php print render($title_suffix); ?>
 
-<?php else: ?>
-<?php //здесь выводим то что надо для списка нод ?>
-	<article class="thumb_product">
-		<h2><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-	</article> <!-- /.node -->
-<?php endif;?>
+      <?php if ($display_submitted): ?>
+        <p class="submitted">
+          <?php
+            print t('Submitted by !username on !datetime',
+              array('!username' => $name, '!datetime' => $date));
+          ?>
+        </p>
+      <?php endif; ?>
+    </header>
+  <?php endif; ?>
 
+  <div class="content"<?php print $content_attributes; ?>>
+    <?php
+      // We hide the comments, tags and links now so that we can render them later.
+      hide($content['comments']);
+      hide($content['links']);
+      hide($content['field_tags']);
+      print render($content);
+    ?>
+  </div> <!-- /.content -->
 
+  <?php if (!empty($content['field_tags']) || !empty($content['links'])): ?>
+    <footer>
+      <?php print render($content['field_tags']); ?>
+      <?php print render($content['links']); ?>
+    </footer>
+  <?php endif; ?>
 
+  <?php print render($content['comments']); ?>
+
+</article> <!-- /.node -->
