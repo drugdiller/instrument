@@ -435,6 +435,17 @@ text-transform:lowercase;
 #cont-col .content Ol li ul li a:hover {text-decoration:none;}
 
 
+/*---Defoult Lists---*/
+.node ul li {
+	background: url("../images/a3.gif") no-repeat scroll 0 7px transparent !important;
+  line-height: 20px !important;
+	padding: 0px 0 7px 10px !important;
+}
+
+.node Ol li {
+	 background:none; padding:5px 0px 5px 0px; margin-left:20px; line-height:24px;
+}
+
 /*---Paragraph Style---*/
 #cont-col .content p { padding-bottom:7px; padding-top:7px;}
 #cont-col .content blockquote { border:1px solid #7f7f7f; background:#f1f1f1; padding:5px; margin:10px 0px 10px 0px;}
