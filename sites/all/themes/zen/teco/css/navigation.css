@@ -1,0 +1,243 @@
+/**
+ * @file
+ * Navigation Styling
+ */
+
+#adr {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+	width: 170px;
+	font-size:13px;
+	line-height: 20px;
+}
+
+#top-nav {
+  position: absolute;
+  top: 0px;
+  right: 170px;
+}
+
+#top-nav li {
+  float: left;
+  width: 75px;
+  margin-right: 20px;
+  border-top: 1px solid #4e4e50;
+  padding-top: 3px;
+}
+
+#top-nav li.active {
+  border-top: 1px solid #f58220;
+}
+
+#top-nav li a.active {
+  color: #f58220;
+}
+
+#top-nav li.date {
+  width: 170px;
+  margin-right: 0px;
+}
+
+
+#main-nav {
+  position: absolute;
+  top: 130px;
+  left: 0px;
+}
+
+#main-nav li {
+  float: left;
+  width: 170px;
+  background: url(../img/main-nav-bg-2.png) no-repeat 0px 0px transparent;
+}
+
+#main-nav li + li {
+  margin-left: 20px;
+}
+
+#main-nav li a {
+  display: block;
+  font-size: 16px;
+  height: 30px;
+  margin-top: 14px;
+  border-top: 1px solid #4e4e50;
+  padding-top: 5px;
+	font-style:italic;
+}
+
+#main-nav li a.active-trail {
+  border-top: 1px solid #f58220;
+color:#f58220;
+}
+
+ul.menu  {
+	margin:30px 0 0 0;
+}
+.menu li.active-trail {
+	border-top: 1px solid #f58220 !important;
+}
+
+.menu li.active-trail a.active-trail {
+	color:#f58220;
+}
+
+
+#main-nav li a:hover, #main-nav li a.active {
+
+}
+
+/* MAIN */
+
+#main h2 {
+  height: 45px;
+  padding-top: 15px;
+  font-size: 16px;
+  font-style: italic;
+	font-weight: normal;
+  background: url(../img/column-border-bg-2.png) repeat-x 0px 1px;
+}
+
+.infowindow .border {
+  height: 15px;
+  margin-right: 17px;
+  background: url(../img/column-border-bg-2.png) repeat-x 0px 1px;
+}
+
+#copy h2 {
+  height: 19px;
+  padding-top: 2px;
+  background: none;
+}
+
+#main p + p {
+  margin-top: 20px;
+}
+
+#copy p + ul, #copy ul + p, #copy ul li + li {
+  margin-top: 20px;
+}
+
+a + p.formintro {
+  margin-top: 40px;
+}
+
+#copy p.formintro {
+  padding-top: 3px;
+  border-top: 1px solid #4E4E50;
+}
+
+#copy ul li {
+  padding-left: 15px;
+  background: url(../img/bullet-point-2.gif) no-repeat 1px 7px;
+}
+
+#copy p {
+  padding-right: 5px;
+}
+
+#sidebar p a, #get-involved li a, #search-results a.read-more, #info p a, #thumbs p a, .infowindow a {
+  padding-right: 11px;
+  background: url(../img/a-href-bg.png) no-repeat right 0px transparent;
+}
+
+#subnav {
+  float: left;
+  width: 170px;
+  margin-right: 20px;
+/*   padding-top: 30px; */
+	display: block;
+	height: 10px;
+}
+
+#subnav ul li {
+  border-top: 1px solid #4e4e50;
+  height: auto;
+  padding-top: 4px;
+  padding-bottom: 10px;
+}
+
+#subnav ul li a.selected {
+  font-weight: bold;
+  font-style: italic;
+}
+
+#content {
+  float: left;
+  width: 550px;
+  margin-right: 20px;
+}
+
+#content-580 {
+	float: left;
+  width: 580px;
+  margin-right: 20px;
+}
+
+#story-nav {
+  height: 30px;
+  margin-left: 95px;
+}
+
+#story-nav li {
+  float: left;
+  width: 75px;
+  padding-top: 3px;
+  border-top: 1px solid #4e4e50;
+}
+
+#story-nav li.inactive {
+  color: #bbbbbc;
+  border-color: #bbbbbc;
+}
+
+#story-nav li + li {
+  margin-left: 20px;
+}
+
+#story-nav ul li a.selected {
+  font-weight: bold;
+  font-style: italic;
+}
+
+
+
+/* FOOTER */
+#footer {
+  height: 250px;
+  border-top: 1px solid #000;
+	background:#f58220;
+}
+
+#footer-content {
+	width: 930px;
+	margin: 0 auto;
+	padding: 25px 35px;
+	color:#fff;
+}
+
+#footer-nav {
+	float:left;
+	width:170px;
+	padding:0 20px 0 0;
+}
+
+#footer-nav a {
+	color:#fff;
+	text-decoration:underline;
+}
+
+#footer-nav li {
+	padding:6px 0 0 0;
+}
+
+#cp {
+	float:left;
+	width:350px;
+	padding:0 0 0 0;
+}
+
+#cp a{
+	color:#fff;
+	text-decoration:underline;
+}
