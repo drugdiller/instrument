@@ -5,25 +5,6 @@
         <div class="col1">
           <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><img class='logo' src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
         </div>
-
-        <div class="col2">
-          <!--<div class="search-box">
-            <form action="/drupal_27410/" accept-charset="UTF-8" method="post" id=
-            "search-theme-form">
-              <div>
-                <input maxlength="128" name="search_theme_form" id=
-                "edit-search-theme-form-1" size="15" title=
-                "Enter the terms you wish to search for." class="form-text" type=
-                "text" /><input name="form_build_id" id=
-                "form-369eba4bb4573651b190a1afec41694d" value=
-                "form-369eba4bb4573651b190a1afec41694d" type="hidden" /><input name=
-                "form_id" id="edit-search-theme-form" value="search_theme_form" type=
-                "hidden" /><input name="op" class="form-submit" value=" " type=
-                "submit" />
-              </div>
-            </form>
-          </div> -->
-        </div>
       </div>
 
       <div class="head-row2">

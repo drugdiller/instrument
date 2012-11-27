@@ -1,0 +1,71 @@
+<?php
+
+function custom_module_help($path, $arg) {
+  switch ($path) {
+    case "admin/help#foo":
+      return '<p>'.  t("Displays links to projects created") .'</p>';
+      break;
+  }
+}
+
+function custom_module_menu() {
+  $items['news'] = array(
+    'title' => 'Новости', 
+    'page callback' => 'news', 
+    'access arguments' => array('access content'),  
+    'type' => MENU_CALLBACK,
+  );
+	$items['rss'] = array(
+	    'title' => 'RSS feed of latest news',
+	    'page callback' => 'custom_module_rss_news',
+	    'access arguments' => array('access content'),
+	    'type' => MENU_CALLBACK,
+	  );
+  return $items;
+}
+
+function news() {
+	$content = '<div class="news-list">';
+	$query = new EntityFieldQuery();
+	$query->entityCondition('entity_type', 'node');
+	$query->propertyCondition('status', 1);
+	$query->propertyCondition('type', 'news');
+	$query->propertyOrderBy('created', 'DESC');
+	$res = $query->execute();
+	$nodes = node_load_multiple(array_keys($res['node']));
+  
+	foreach ($nodes as $record) {
+		$content .= '<div class="news">';
+		$content .= '<span class="date">'.date("d m y", $record->created).' - </span>';
+		$content .= l(
+			$record->title,
+			'node/'.$record->nid, 
+			array(
+				'attributes' => array(
+					'class' => 'news-lnk'
+					),
+			)
+		);
+
+		$content .= '<div class="clear"></div></div>';
+	}
+	$content.="<div class='rss'><a href='/rss'><img src='/".drupal_get_path('theme', 'teco')."/images/rss.png'></a></div>";
+	$content.="</div><div class='clear'></div></div>";
+	
+	$content .= theme('pager');
+	return $content;
+}
+
+function custom_module_rss_news() {
+	$query = new EntityFieldQuery();
+	$query->entityCondition('entity_type', 'node');
+	$query->propertyCondition('status', 1);
+	$query->propertyCondition('type', 'news');
+	$query->propertyOrderBy('created', 'DESC');
+	$res = $query->execute();
+	$nodes = node_load_multiple(array_keys($res['node']));
+	foreach ($nodes as $record) {
+		$nids[] = $record->nid;
+	}	
+	node_feed($nids, $channel);
+}

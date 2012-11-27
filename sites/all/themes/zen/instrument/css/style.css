@@ -174,7 +174,7 @@ h1.title { background:none; font-size:17px;}
 h1.title a {color:#cfcfcf; text-transform:uppercase; text-decoration:none; font-size:23px; font-weight:normal; line-height:normal;}
 h1.title a:hover{text-decoration:none; color:#fff}
 #tabs-wrapper h2 { background:none; color:#a5a5a7 !important; padding-bottom:10px; font-size:18px; font-weight:normal;}
-h2 { font-size:20px; color:#a5a5a6; padding:10px 0px 7px 0px; text-transform:capitalize; width:100%; font-weight:normal;}
+h2 { font-size:20px; color:#a5a5a6; padding:10px 0px 7px 0px; text-transform:capitalize; font-weight:normal;}
 h2.with-tabs { padding-left:0px; padding-top:0px;}
 .block h2 { display:block; border-bottom:#bcbcbc 1px solid; color:#444b4e; font-size:12px; line-height:22px; margin:0; margin-top:5px; margin-bottom:10px; padding:0;}
 
@@ -737,3 +737,17 @@ table.sticky-header { background:#0b0b0c; overflow:hidden; position:relative;}
 #cont-col .content ul.pager li:hover{ background:#252524; border:1px solid #383838;}
 #cont-col .content ul.pager li a{ color:#909ca4; text-decoration:none;}
 #cont-col .content ul.pager li a:hover { color:#f3ede4}
+
+
+.news {
+  display: block;
+  padding: 0 0 20px;
+}
+
+.date {
+	
+}
+
+.news-list {
+  padding: 20px 0 0 0;
+}
