@@ -79,41 +79,32 @@
 <?php if ($page): ?>    
 <?php //здесь выводим то что надо на отдельные ноды ?>
   <div class="textnarrow">
+		<h2 class='product'><?php print $title; ?></h2>
+		<?php if (isset($node->body['und'][0]['value'])) print $node->body['und'][0]['value'] ; ?>
+	</div>
  
-	<h2 class='product'><?php print $title; ?></h2>
-	<?php print $node->body['und'][0]['value']; ?>
-	
-  </div>
-
-  <div id="screen">
-	<div id="slideshow">
-	  <div id="scroll" style="width: 4935px; ">
-	    <?php 
-        if (isset($node->field_img['und']))
-		foreach ($node->field_img['und'] as $p) {
-			$image = file_load($p['fid']);
-			if ($image)
-			  print '<div class="scrollitems">'.theme('image_style', 
-			      	array(
-			        		'style_name' => 'large', 
-			        		'path' => $image->uri, 
-			        		'getsize' =>FALSE
-			      		)
-			    		).'</div>' ;
-
+	<div class="fotorama" data-width="700" data-height="467" data-fullscreenIcon="true">
+	<?php 
+		$con = '';
+		if (isset($node->field_img['und'])) {
+			foreach ($node->field_img['und'] as $p) {
+				$image = file_load($p['fid']);
+				if ($image) {
+	  			$con .= '<a rel="'.file_create_url($image->uri).'">';
+					$con .= theme('image_style', 
+	      		array(
+	        		'style_name' => 'large', 
+	        		'path' => $image->uri, 
+	        		'getsize' =>FALSE
+	      		)
+					);
+					$con .= '</a>' ;
+				}
+			}
+			print $con;
 		}
 		?>
-	  </div>
-    </div>
-    <div id="screennav" style="display: none; ">	
-	  <!-- PREV/NEXT ARROWS -->
-	  <div class="bar left" id="arrow_left" style="display: none;"><a class="prev" href="#"></a></div>
-	  <div class="bar right" id="arrow_right"><a class="next" href="#"></a></div>
-    </div>
-  </div>
-
-	
-	
+		</div>
 <?php else: ?>
 <?php //здесь выводим то что надо для списка нод ?>
 	<article class="thumb_product">
