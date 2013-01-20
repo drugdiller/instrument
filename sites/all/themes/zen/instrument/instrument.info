@@ -69,11 +69,8 @@ stylesheets[all][] = css/forms.css
 
 
 ; Optionally add some JavaScripts to your theme.
-;scripts[] = js/jquery.scrollTo-1.4.0-min.js
-;scripts[] = js/jquery.serialScroll-1.2.1-min.js
-;scripts[] = js/jquery.cycle.all.latest.js
-;scripts[] = js/script.js
-
+scripts[] = js/jquery.cycle.lite.js
+scripts[] = js/script.js
 
 
 

@@ -24,8 +24,9 @@
         </div>			  
       </div>
 
-      <div class="head-row3">
+      <div class="head-row3" id="fade">
         <img style="margin-left:5px;" src="/<?php print path_to_theme(); ?>/images/e.png">
+				<img style="margin-left:5px;" src="/<?php print path_to_theme(); ?>/images/e2.jpg">
       </div>
 
       <div class="head-row4">
@@ -37,7 +38,7 @@
 
         <div class="col2"></div>
       </div>
-			<!-- баннеры
+			<!-- баннеры-->
       <div class="head-row5" id="custom">
         <div class="block block-block" id="block-block-14">
           <div class="block-top">
@@ -67,7 +68,8 @@
             </div>
           </div>
         </div>
-      </div>-->
+      </div>
+			<!-- баннеры-->
     </div>
 
     <div id="cont">
@@ -173,7 +175,9 @@
 							<?php if ($title): ?>
 								<h2 class="title" id="page-title"><?php print $title; ?></h2>
 							<?php endif; ?>
-							<?php print render($page['content']); ?>
+							<div class="content">
+								<?php print render($page['content']); ?>
+							</div>
 							<?php print $feed_icons; ?>
 
               <div id="custom2">

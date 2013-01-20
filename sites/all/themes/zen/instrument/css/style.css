@@ -162,7 +162,7 @@ a.cont-more { font-size:14px !important; font-weight:bold !important;}
 
 .width { width:100%; overflow:hidden;}
 
-#cont-col { overflow:hidden; height:1%; padding:18px 0px 0px 0px; }
+#cont-col { overflow:hidden; height:1%; padding:0px 0px 0px 0px; }
 #cont-col .ind { width:100%; overflow:hidden;}
 
 #right-col { width:284px; float:right;}
