@@ -100,8 +100,8 @@ div.block { margin-bottom:7px; color:#363638; position:relative; overflow:hidden
 .clear-block { padding:0px 20px 0px 18px;}
 .admin .clear-block { padding:0px;}
 
-.pic-list { float:left;}
-#cont-col .content .pic-list li { padding-left:26px;}
+.pic-list { float:left; width:300px;}
+#cont-col .content .pic-list li { padding:0 0 10px 16px;background:none;}
 
 h4 {color:#bbb7b0; font-size:18px; font-weight:normal; padding-bottom:10px; padding-top:10px;}
 
@@ -412,6 +412,8 @@ text-transform:lowercase;
 #cont-col .content ul li ol {margin-left:20px;}
 #cont-col .content ul li ol li{ list-style-type:decimal;}
 
+
+
 /*---Numeric Lists without links---*/
 #cont-col .content Ol { padding-left:2px;}
 #cont-col .content Ol li{ background:none; padding:0px; margin-left:20px; line-height:24px; color:#797979;}
@@ -631,7 +633,7 @@ div.admin .left { margin:0px;}
 .even td { vertical-align:middle; padding-left:px; line-height:18px; background:#171717; font-size:12px;} /* even_row BACKGROUND*/
 .profile h3 { border-bottom:1px solid #cfcdcd; color:#FFF}
 
-img.alignleft{ float:left; margin-right:51px;}
+img.alignleft{ float:left; margin-right:20px;}
 img.alignright{ float:right; margin-left:25px; margin-right:39px; margin-top:30px;}
 
 

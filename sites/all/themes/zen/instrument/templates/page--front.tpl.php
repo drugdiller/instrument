@@ -177,6 +177,36 @@
 							<?php endif; ?>
 							<div class="content">
 								<?php print render($page['content']); ?>
+								<img alt="" class="alignleft" src="/<?php print path_to_theme(); ?>/images/img.png" />
+								<?php
+								$content = '<ul class="pic-list">';
+								$query = new EntityFieldQuery();
+								$query->entityCondition('entity_type', 'node');
+								$query->propertyCondition('status', 1);
+								$query->propertyCondition('type', 'news');
+								$query->propertyOrderBy('created', 'DESC');
+								$query->range(0,3);
+								$res = $query->execute();
+								$nodes = node_load_multiple(array_keys($res['node']));
+								foreach ($nodes as $record) {
+									$content .= '<li>';
+									$content .= '<span class="date">'.date("d m y", $record->created).' - </span>';
+									$content .= l(
+										$record->title,
+										'node/'.$record->nid, 
+										array(
+											'attributes' => array(
+												'class' => 'news-lnk'
+												),
+										)
+									);
+									$content .= '</li>';
+								}
+								$content .= '</ul>';
+								print $content;
+								?>
+								<div class="clear">&nbsp;</div>
+								
 							</div>
 							<?php print $feed_icons; ?>
 
