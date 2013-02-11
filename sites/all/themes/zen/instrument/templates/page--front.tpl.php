@@ -44,7 +44,7 @@
           <div class="block-top">
             <div class="title"></div>
             <div class="content">
-              <a href="#"><img alt="" src="/<?php print path_to_theme(); ?>/images/banner.jpg" /></a>
+              <a href="/taxonomy/term/4"><img alt="" src="/<?php print path_to_theme(); ?>/images/banner.jpg" /></a>
             </div>
           </div>
         </div>
@@ -54,7 +54,7 @@
             <div class="title"></div>
 
             <div class="content">
-              <a href="#"><img alt="" src="/<?php print path_to_theme(); ?>/images/banner2.jpg" /></a>
+              <a href="/taxonomy/term/7"><img alt="" src="/<?php print path_to_theme(); ?>/images/banner2.jpg" /></a>
             </div>
           </div>
         </div>
@@ -64,7 +64,7 @@
             <div class="title"></div>
 
             <div class="content">
-              <a href="#"><img alt="" src="/<?php print path_to_theme(); ?>/images/banner3.jpg" /></a>
+              <a href="/taxonomy/term/8"><img alt="" src="/<?php print path_to_theme(); ?>/images/banner3.jpg" /></a>
             </div>
           </div>
         </div>
@@ -103,59 +103,7 @@
                     </div>
                   </div>
                 </div>
-								
 								<?php print render($page['sidebar_first']); ?>
-								
-
-                <!--<div class="block block-user" id="block-user-0">
-                  <div class="block-top">
-                    <div class="title">
-                      <h3>User login</h3>
-                    </div>
-
-                    <div class="content">
-                      <form action="/drupal_27410/?q=node&amp;destination=node"
-                      accept-charset="UTF-8" method="post" id="user-login-form">
-                        <div>
-                          <div class="form-item" id="edit-name-wrapper">
-                            <label for="edit-name">Username: <span class=
-                            "form-required" title=
-                            "This field is required.">*</span></label>
-                            <input maxlength="60" name="name" id="edit-name" size="15"
-                            class="form-text required" type="text" />
-                          </div>
-
-                          <div class="form-item" id="edit-pass-wrapper">
-                            <label for="edit-pass">Password: <span class=
-                            "form-required" title=
-                            "This field is required.">*</span></label> <input name=
-                            "pass" id="edit-pass" maxlength="60" size="15" class=
-                            "form-text required" type="password" />
-                          </div><input name="op" id="edit-submit" value="Log in" class=
-                          "form-submit" type="submit" />
-
-                          <div class="item-list">
-                            <ul>
-                              <li class="first"><a href=
-                              "http://osc.template-help.com/drupal_27410/?q=user/register"
-                              title="Create a new user account.">Create new
-                              account</a></li>
-
-                              <li class="last"><a href=
-                              "http://osc.template-help.com/drupal_27410/?q=user/password"
-                              title="Request new password via e-mail.">Request new
-                              password</a></li>
-                            </ul>
-                          </div><input name="form_build_id" id=
-                          "form-e385a1a84f35663bcffe0c3bb654fce3" value=
-                          "form-e385a1a84f35663bcffe0c3bb654fce3" type=
-                          "hidden" /><input name="form_id" id="edit-user-login-block"
-                          value="user_login_block" type="hidden" />
-                        </div>
-                      </form>
-                    </div>
-                  </div>
-									</div> -->
               </div>
             </div>
           </div>
