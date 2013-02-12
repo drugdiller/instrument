@@ -67,7 +67,7 @@
           <div id="cont-col">
             <div class="ind">
               <!-- start main content -->
-
+							<?php if ($breadcrumb) print $breadcrumb;?>
 							<?php print render($page['highlighted']); ?>
 							<?php print render($title_prefix); ?>
 							<?php print $messages; ?>
