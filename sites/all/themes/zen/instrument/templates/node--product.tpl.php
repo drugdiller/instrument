@@ -78,7 +78,6 @@
 ?>
 <?php if ($page): ?>    
 <?php //здесь выводим то что надо на отдельные ноды ?>
-	<article>
 		<div class="photo_product">
 			<?php 
 			foreach ($node->field_photo['und'] as $p) {
@@ -102,27 +101,13 @@
 	  	<div class="content">
 		<?php print $node->body['und'][0]['value']; ?>
 	  	</div> <!-- /.content -->
-	</article> <!-- /.node -->
+			<!-- /.node -->
 
 <?php else: ?>
 <?php //здесь выводим то что надо для списка нод ?>
-	<article class="thumb_product">
-		<?php
-		$image = file_load($node->field_photo['und'][0]['fid']); 
-		print l(
-			theme('image_style', 
-		    	array(
-		      		'style_name' => 'thumbnail', 
-		      		'path' => $image->uri, 
-		      		'getsize' =>FALSE
-		    		)
-		  		),
-		  	'node/'.$node->nid,
-		  	array('html'=>TRUE)
-		);
-		?>
+	<div class="thumb_product">
 		<h2><a href="<?php print $node_url; ?>"><?php print $title; ?></a></h2>
-	</article> <!-- /.node -->
+	</div> <!-- /.node -->
 <?php endif;?>
 
 
