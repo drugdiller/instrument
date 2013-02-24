@@ -49,7 +49,7 @@ function news() {
 
 		$content .= '<div class="clear"></div></div>';
 	}
-	$content.="<div class='rss'><a href='/rss'><img src='/".drupal_get_path('theme', 'teco')."/images/rss.png'></a></div>";
+	$content.="<div class='rss'><a href='/rss'><img src='/".drupal_get_path('theme', 'instrument')."/images/rss.png'></a></div>";
 	$content.="</div><div class='clear'></div></div>";
 	
 	$content .= theme('pager');
