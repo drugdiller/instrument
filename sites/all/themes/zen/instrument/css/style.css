@@ -753,3 +753,17 @@ table.sticky-header { background:#0b0b0c; overflow:hidden; position:relative;}
 .news-list {
   padding: 20px 0 0 0;
 }
+
+.col1 {
+	float:left;
+	width: 700px;
+}
+.col2 {
+	float:left;
+}
+
+.phone-box {
+  font-size: 18px;
+  padding: 30px 0 0;
+	color: white;
+}

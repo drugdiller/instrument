@@ -5,6 +5,12 @@
         <div class="col1">
           <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><img class='logo' src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" /></a>
         </div>
+				<div class="col2">
+					<div class="phone-box">
+						+7(812) 707-55-87</br>
+						+7(964) 330-20-30
+				  </div>
+				</div>
 			</div>
 
       <div class="head-row2">
